@@ -5,7 +5,7 @@ import asyncio
 from telegram import Bot
 
 load_dotenv()
-# -------
+
 api_id = os.getenv('TG_API_ID')
 api_hash = os.getenv("TG_API_HASH")
 phone = os.getenv("PHONE")
@@ -16,7 +16,7 @@ bot_token = forward_bot_token  # From BotFather
 destination_chat_id = os.getenv("DESTINATION_ID")  # e.g., a user ID, group ID, or channel ID (like -100123456789)
 
 # Initialize Telethon client (user account)
-client = TelegramClient('session_name', api_id, api_hash)
+client = TelegramClient('/app/data/session_name', api_id, api_hash)
 
 # Initialize your Telegram bot
 bot = Bot(bot_token)
