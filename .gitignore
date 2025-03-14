@@ -2,4 +2,5 @@
 /venv
 test.py
 __pycache__/
-*.pyc
+*.pycvenv/
+*.session
