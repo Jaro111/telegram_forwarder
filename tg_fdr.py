@@ -24,8 +24,6 @@ bot = Bot(bot_token)
 # Define the private bot's chat ID or username
 private_bot_id = int(os.getenv("LISTEN_CHANNEL_ID"))  # Replace with the private bot's chat ID or username
 
-print(f"Volume contents: {os.listdir('/app/data')}")
-
 @client.on(events.NewMessage(chats=private_bot_id))
 async def handler(event):
     # Get the message content
