@@ -1,1 +1,1 @@
-web: python tg_fdr.py 
+web: cp session_name.session /app/data/session_name.session && python bot.py
