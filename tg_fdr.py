@@ -18,23 +18,21 @@ bot_token = forward_bot_token  # From BotFather
 destination_chat_id = os.getenv("DESTINATION_ID")  # e.g., a user ID, group ID, or channel ID (like -100123456789)
 
 # Initialize Telethon client (user account)
-client = TelegramClient('session_name', api_id, api_hash)
+client = TelegramClient("/app/data/session_name", api_id, api_hash)
 
 # Initialize your Telegram bot
 bot = Bot(bot_token)
 
 # Define the private bot's chat ID or username
 private_bot_id = int(os.getenv("LISTEN_CHANNEL_ID"))  # Replace with the private bot's chat ID or username
-print(private_bot_id)
 
 @client.on(events.NewMessage(chats=listen_chanel_username))
 async def handler(event):
     # Get the message content
-    print("bla")
     message_text = event.message.text
     print(f"Received from private bot: {message_text}")
-    # exact_time = event.message.date  # UTC datetime with seconds
-    # print(f"Received at {exact_time}")
+    exact_time = event.message.date  # UTC datetime with seconds
+    print(f"Received at {exact_time}")
 
     # Forward the message using your bot
     try:
