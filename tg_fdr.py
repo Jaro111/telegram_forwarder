@@ -29,7 +29,7 @@ private_bot_id = int(os.getenv("LISTEN_CHANNEL_ID"))  # Replace with the private
 @client.on(events.NewMessage(chats=listen_chanel_username))
 async def handler(event):
     # Get the message content
-    message_text = event.message
+    message_text = event.message.text
     print(f"Received from private bot: {message_text}")
     exact_time = event.message.date  # UTC datetime with seconds
     print(f"Received at {exact_time}")
