@@ -18,7 +18,7 @@ bot_token = forward_bot_token  # From BotFather
 destination_chat_id = os.getenv("DESTINATION_ID")  # e.g., a user ID, group ID, or channel ID (like -100123456789)
 
 # Initialize Telethon client (user account)
-client = TelegramClient("/app/data/session_name", api_id, api_hash)
+client = TelegramClient("bot_session", api_id, api_hash)
 
 # Initialize your Telegram bot
 bot = Bot(bot_token)
